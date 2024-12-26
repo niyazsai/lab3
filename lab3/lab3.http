@@ -1,0 +1,6 @@
+@lab3_HostAddress = http://localhost:5288
+
+GET {{lab3_HostAddress}}/api/ShoppingList/
+Accept: application/json
+
+###
