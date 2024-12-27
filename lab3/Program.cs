@@ -10,14 +10,6 @@ namespace lab3
                     webBuilder.UseStartup<Startup>();
                 })
                 .Build();
-
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<ShoppingListDbContext>();
-                await context.Database.EnsureCreatedAsync();
-            }
-
             await host.RunAsync();
         }
     }

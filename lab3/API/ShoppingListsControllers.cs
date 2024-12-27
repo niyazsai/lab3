@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-//using lab2.Models;
-//using lab2.Services;
 
 namespace lab3
 {
@@ -46,9 +44,10 @@ namespace lab3
             return CreatedAtAction(nameof(GetShoppingList), new { id = shoppingList.ShoppingListId }, shoppingList);
         }
 
+        //https://www.ozon.ru/product/nabor-konteynerov-dlya-produktov-s-vintovoy-kryshkoy-twist-5-sht-1712078037/?avtc=1&avte=4&avts=1735282166
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateShoppingList(int id, [FromBody] ShoppingList updatedList)
+        public async Task<ActionResult> UpdateShoppingList([FromRoute]int id, [FromBody] ShoppingList updatedList)
         {
             var existingList = await _repository.GetShoppingListByIdAsync(id);
             if (existingList == null)

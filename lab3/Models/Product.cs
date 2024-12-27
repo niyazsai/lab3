@@ -15,10 +15,9 @@ namespace lab3
         public bool IsPurchased { get; set; }
         public DateTime PurchaseDate { get; set; }
         
-        [JsonIgnore]
         public int ShoppingListId { get; set; }
         
-        //[JsonIgnore]
+         //[JsonIgnore]
         public ShoppingList ShoppingList { get; set; }
         
         public Product() { }
